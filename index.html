@@ -29,7 +29,7 @@
 	            <a id="addItem" data-bind="click: addQuestion"  class="button">Ask now!</a>
 	        </div>
 	    </section>
-	    <ul id="questions">
+	    <ul id="questions" data-bind="foreach: questions">
 	        <li class="question">
 	          <div class="voteStatus">
 	              <a class="vote voteup"></a>
@@ -37,10 +37,11 @@
 	              <a class="vote votedown selected"></a>
 	          </div>
 	          <div class="questionText">
-	              <p>What is your quest?</p>
-	              <div class="questionAuthor">From: Bridge Keeper</div>
+	              <p data-bind="text: content"></p>
+	              <div class="questionAuthor">From: <span data-bind="text: author"></span></div>
 	          </div>
 	      </li>
+	  </ul>
 	      <li class="question">
 	        <div class="voteStatus">
 	            <a class="vote voteup"></a>
