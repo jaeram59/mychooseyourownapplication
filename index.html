@@ -32,9 +32,9 @@
 	    <ul id="questions" data-bind="foreach: questions">
 	        <li class="question">
 	          <div class="voteStatus">
-	              <a class="vote voteup"></a>
-	              <div class="votecount">1</div>
-	              <a class="vote votedown selected"></a>
+	              <a class="vote voteup" data-bind="click: addVote.bind($data, $parent.userName(), 'up')"></a>
+	              <div class="votecount" dat-bind="text: voteTally"></div>
+	              <a class="vote votedown selected" data-bind="click: addVote.bind($data, $paret.userName(), 'down')"></a>
 	          </div>
 	          <div class="questionText">
 	              <p data-bind="text: content"></p>
@@ -42,18 +42,6 @@
 	          </div>
 	      </li>
 	  </ul>
-	      <li class="question">
-	        <div class="voteStatus">
-	            <a class="vote voteup"></a>
-	            <div class="votecount">1</div>
-	            <a class="vote votedown selected"></a>
-	        </div>
-	        <div class="questionText">
-	            <p>What is your favorite color?</p>
-	            <div class="questionAuthor">From: Bridge Keeper</div>
-	        </div>
-	      </li>
-	    </ul>
 	</div>
   <script type="text/javascript" src="scripts/question-viewModel.js"></script>
   <script type="text/javascript" src="scripts/overflow-viewmodel.js"></script>
